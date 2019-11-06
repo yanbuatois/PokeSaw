@@ -25,6 +25,7 @@ export default class RGBYEditor extends React.Component {
     const [success, message] = this.props.save.writePlayerName(this.formRefs.playerName.current.value);
     if (!success) {
       this.props.displayError(message);
+      return;
     }
     this.props.save.regenChecksum();
     this.props.save.saveAs();
